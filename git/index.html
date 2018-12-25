@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Git</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		h2{
+			margin: 30px 0 40px;
+		}
+		.list-group-item span{
+			font-size: 16px;
+			color: #161616;
+		}
+		.aside{
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+			<div class="col-xs-12">
+				<h2>Git Tutorial</h2>
+			</div>
+			<div class="col-xs-8">
+					<ul class="list-group" id="info">
+						<li class="list-group-item list-group-item-info">
+							<h4 class="list-group-item-heading" >Інформативні команди</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git --version</pre> 
+							<div class="col-xs-8 "><span>Версія установленого Git</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git help</pre> 
+							<div class="col-xs-8 "><span>Список основних команд Git</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git help commit</pre> 
+							<div class="col-xs-8 "><span>Детальна інформація</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">pwd</pre> 
+							<div class="col-xs-8 "><span>папка в якій відкрита консоль</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="config">
+						<li class="list-group-item list-group-item-success">
+							<h4 class="list-group-item-heading">Конфігурація git</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config --list</pre> 
+							<div class="col-xs-6 "><span>Список опцій</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config user.name</pre> 
+							<div class="col-xs-6 "><span>Детальна інформація</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config --global user.name "Your name"</pre> 
+							<div class="col-xs-6 "><span>Ім'я користувача</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config --global user.email "my@mail.ua"</pre> 
+							<div class="col-xs-6 "><span>E-mail користувача</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config core.editor vim</pre>
+							<div class="col-xs-6 "><span>настройка редактора за замовчуванням</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config alias.st status</pre>
+							<div class="col-xs-6 "><span>скорочена команда для git status</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config alias.br branch</pre>
+							<div class="col-xs-6 "><span>скорочена команда для git branch</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="local">
+						<li class="list-group-item list-group-item-warning">
+							<h4 class="list-group-item-heading">Робота з файлами локально</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git init</pre> 
+							<div class="col-xs-6"><span>старт проекту</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">rm -rf .git</pre> 
+							<div class="col-xs-6"><span>видалення репозиторію</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git status</pre> 
+							<div class="col-xs-6"><span></span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git diff</pre> 
+							<div class="col-xs-6"><span>зміни, які були внесені (до git add)</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git diff --staged</pre> 
+							<div class="col-xs-6"><span>зміни, які були внесені (після git add) </span></div>
+						</li>
+						
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git rm filename</pre> 
+							<div class="col-xs-6"><span>видалення файлу</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git rm -rf filename/folder</pre> 
+							<div class="col-xs-6"><span>видалення файлу або папки</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-5">git mv oldfilename newfilename</pre> 
+							<div class="col-xs-7"><span>перейменування файлу</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-5">git mv filename folder/filename</pre> 
+							<div class="col-xs-7"><span>переміщення файлу</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="commit">
+						<li class="list-group-item list-group-item-success">
+							<h4 class="list-group-item-heading">Коміти</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git add .</pre> 
+							<div class="col-xs-6"><span></span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git reset HEAD filename</pre> 
+							<div class="col-xs-6"><span>відміна індексації через git add змін</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git commit -m "first commit"</pre> 
+							<div class="col-xs-6"><span>комміт</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git commit -am "commit"</pre> 
+							<div class="col-xs-6"><span>індексація файлів і добавлення в коміт</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git commit --amend</pre> 
+							<div class="col-xs-6"><span>приєднати нові файли до останнього коміту  ( після git add filename )</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git checkout -- filename</pre> 
+							<div class="col-xs-6"><span>відкат файлу в коміті</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="history">
+						<li class="list-group-item list-group-item-info">
+							<h4 class="list-group-item-heading">Історія комітів</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git log</pre> 
+							<div class="col-xs-6"><span>загальна інформація</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git log --oneline</pre> 
+							<div class="col-xs-6"><span>загальна інформація</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git log --oneline --graph</pre> 
+							<div class="col-xs-6"><span>загальна інформація - графік</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git log --author="DevName"</pre> 
+							<div class="col-xs-6"><span>список комітів конкретного девелопера</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git show commitnumber</pre> 
+							<div class="col-xs-6"><span>перегляд коміта по id</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git checkout commitnumber</pre> 
+							<div class="col-xs-6"><span>загрузка коміту по номеру з історії</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git checkout commitnumber -- filename</pre> 
+							<div class="col-xs-6"><span>загрузка коміту по номеру з історії (конкретний файл)</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git stash</pre> 
+							<div class="col-xs-8"><span>при error: Your local changes to the following files would be overwritten by checkout</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">q</pre> 
+							<div class="col-xs-6"><span>вихід з історії комітів</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="github">
+						<li class="list-group-item list-group-item-danger">
+							<h4 class="list-group-item-heading">Робота з віддаленим репозиторієм</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git remote add origin https://github.com/repo.git</pre> 
+							<div class="col-xs-4"><span>коннект локального репозиторію з github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git remote -v</pre> 
+							<div class="col-xs-4"><span>список віддалених репозиторіїв</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git push -u origin master</pre> 
+							<div class="col-xs-4"><span>відправка данних на github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git push</pre> 
+							<div class="col-xs-6"><span>відправка данних на github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git fetch</pre> 
+							<div class="col-xs-6"><span>загрузка данних з github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git pull</pre> 
+							<div class="col-xs-6"><span>загрузка данних з github + merge</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git pull origin namebranch</pre> 
+							<div class="col-xs-4"><span>загрузка данних з github з гілки namebranch</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git clone https://github.com/profilike/site.git</pre> 
+							<div class="col-xs-4"><span>клонування репозиторію</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="branches">
+						<li class="list-group-item list-group-item-warning">
+							<h4 class="list-group-item-heading">Робота з гілками проекту</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git branch</pre> 
+							<div class="col-xs-6"><span>список гілок</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git branch -la</pre> 
+							<div class="col-xs-6"><span>список гілок (включно з віддаленими)</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git branch new</pre> 
+							<div class="col-xs-6"><span>нова гілка з іменем new</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git checkout new</pre> 
+							<div class="col-xs-6"><span>загрузка гілки з іменем new</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git checkout -b develop</pre> 
+							<div class="col-xs-6"><span>створення і перехід на гілку develop</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git merge new</pre> 
+							<div class="col-xs-8"><span>злиття основної master гілки з гілкою new ( при виконанні команди потрібно бути на гілці master )</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git merge --abort</pre> 
+							<div class="col-xs-8"><span>відміна злиття</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git diff master new</pre> 
+							<div class="col-xs-8"><span>відмінності між двома гілками master i new</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git branch -m master newmaster</pre> 
+							<div class="col-xs-6"><span>перейменування master на newmaster</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git branch -d new</pre> 
+							<div class="col-xs-8"><span>видалення гілки з іменем new</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="gitflow">
+						<li class="list-group-item list-group-item-success">
+							<h4 class="list-group-item-heading">Оптимізація з Gitflow  </h4>
+							<p><a href="https://github.com/nvie/gitflow">(https://github.com/nvie/gitflow)</a></p>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git flow init</pre> 
+							<div class="col-xs-8"><span>ініціалізація</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git flow feature start auth</pre> 
+							<div class="col-xs-8"><span>створення і перехід на гілку feature/auth</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git flow feature finish auth</pre> 
+							<div class="col-xs-8"><span>merge гілки feature/auth, видалення гілки feature/auth і перехід на develop</span></div>
+						</li>
+					</ul>
+					<ul class="list-group" id="tags">
+						<li class="list-group-item list-group-item-danger">
+							<h4 class="list-group-item-heading">Теги</h4>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git tag</pre> 
+							<div class="col-xs-8"><span>список тегів</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git tag 1.2</pre> 
+							<div class="col-xs-8"><span>створення нового тегу</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git checkout -b 1.2</pre> 
+							<div class="col-xs-8"><span>створення гілки з останніми комітами з тегу 1.2</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git push origin --tags</pre> 
+							<div class="col-xs-8"><span></span></div>
+						</li>
+					</ul>
+			</div>	
+			<div class="col-xs-4">
+				<div class="aside">
+				<ul class="list-group">
+						<li class="list-group-item"><a href="#info">Інформативні команди</a></li>
+						<li class="list-group-item"><a href="#config">Конфігурація git</a></li>
+						<li class="list-group-item"><a href="#local">Робота з файлами локально</a></li>
+						<li class="list-group-item"><a href="#commit">Коміти</a></li>
+						<li class="list-group-item"><a href="#history">Історія комітів</a></li>
+						<li class="list-group-item"><a href="#github">Робота з віддаленим репозиторієм</a></li>
+						<li class="list-group-item"><a href="#branches">Робота з гілками проекту</a></li>
+						<li class="list-group-item"><a href="#gitflow">Оптимізація з Gitflow</a></li>
+						<li class="list-group-item"><a href="#tags">Теги</a></li>
+				</ul>
+				</div>
+			</div>
+	</div>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script>
+		(function($){
+			$(document).ready(function(){
+				$('.aside').affix({
+	  			offset: {top: 10}
+				});
+			})
+		}(jQuery))
+	</script>
+</body>
+</html>
