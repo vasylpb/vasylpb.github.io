@@ -148,6 +148,18 @@
 							<pre class="col-xs-4">git checkout -- filename</pre> 
 							<div class="col-xs-6"><span>відкат файлу в коміті</span></div>
 						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git commit --amend -m "new message"</pre> 
+							<div class="col-xs-6"><span>перейменування ост. коміту</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git reset --soft HEAD^</pre> 
+							<div class="col-xs-6"><span>видалення останньго коміту, зміни збережені</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git reset --hard HEAD^</pre> 
+							<div class="col-xs-6"><span>видалення останньго коміту, зміни також видалені</span></div>
+						</li>
 					</ul>
 					<ul class="list-group" id="history">
 						<li class="list-group-item list-group-item-info">
@@ -209,6 +221,10 @@
 						<li class="list-group-item clearfix">
 							<pre class="col-xs-6">git push</pre> 
 							<div class="col-xs-6"><span>відправка данних на github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git push origin <branch>--force</pre> 
+							<div class="col-xs-6"><span>відправка данних з переписуванням файлів</span></div>
 						</li>
 						<li class="list-group-item clearfix">
 							<pre class="col-xs-6">git fetch</pre> 
