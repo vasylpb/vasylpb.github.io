@@ -54,6 +54,10 @@
 							<div class="col-xs-6 "><span>Список опцій</span></div>
 						</li>
 						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git config --global -e</pre>
+							<div class="col-xs-6 "><span>Перегляд глобальної конфігурації</span></div>
+						</li>
+						<li class="list-group-item clearfix">
 							<pre class="col-xs-6">git config user.name</pre> 
 							<div class="col-xs-6 "><span>Детальна інформація</span></div>
 						</li>
@@ -66,7 +70,7 @@
 							<div class="col-xs-6 "><span>E-mail користувача</span></div>
 						</li>
 						<li class="list-group-item clearfix">
-							<pre class="col-xs-6">git config core.editor vim</pre>
+							<pre class="col-xs-6">git config --global core.editor code</pre>
 							<div class="col-xs-6 "><span>настройка редактора за замовчуванням</span></div>
 						</li>
 						<li class="list-group-item clearfix">
@@ -74,8 +78,8 @@
 							<div class="col-xs-6 "><span>скорочена команда для git status</span></div>
 						</li>
 						<li class="list-group-item clearfix">
-							<pre class="col-xs-6">git config alias.br branch</pre>
-							<div class="col-xs-6 "><span>скорочена команда для git branch</span></div>
+							<pre class="col-xs-6">git config --global alias.onelinegraph 'log --oneline --graph --decorate'</pre>
+							<div class="col-xs-6 "><span>скорочена команда для git log --oneline --graph --decorate</span></div>
 						</li>
 					</ul>
 					<ul class="list-group" id="local">
@@ -160,6 +164,22 @@
 							<pre class="col-xs-4">git reset --hard HEAD^</pre> 
 							<div class="col-xs-6"><span>видалення останньго коміту, зміни також видалені</span></div>
 						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git clean -d -x -i</pre>
+							<div class="col-xs-6"><span>інтерактивне видалення неіндексованих файлів</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git revert commitnumber</pre>
+							<div class="col-xs-6"><span>безпечний відкат до коміту</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git rebase -i HEAD~4</pre> 
+							<div class="col-xs-6"><span>інтерактивний rebase останніх 4 комітів (можливість squash)</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git cherry-pick commitnumber</pre> 
+							<div class="col-xs-6"><span></span></div>
+						</li>
 					</ul>
 					<ul class="list-group" id="history">
 						<li class="list-group-item list-group-item-info">
@@ -196,6 +216,20 @@
 						<li class="list-group-item clearfix">
 							<pre class="col-xs-4">q</pre> 
 							<div class="col-xs-6"><span>вихід з історії комітів</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git reflog</pre> 
+							<div class="col-xs-6"><span>Історія по останнім командам. (включно amend, checkout)</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-4">git reflog HEAD@{2019-01-01}</pre> 
+							<div class="col-xs-6"><span>Історія по останнім командам по таймперіоду</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-8">git reflog expire --expire-enreachable=now --all 
+							</pre> 
+							<pre class="col-xs-8">git gc --prune=now</pre>
+							<div class="col-xs-4"><span>Очистка "мертвих" комітів</span></div>
 						</li>
 					</ul>
 					<ul class="list-group" id="stash">
@@ -260,8 +294,12 @@
 							<div class="col-xs-6"><span>відправка данних з переписуванням файлів</span></div>
 						</li>
 						<li class="list-group-item clearfix">
-							<pre class="col-xs-6">git fetch</pre> 
+							<pre class="col-xs-6">git fetch origin</pre> 
 							<div class="col-xs-6"><span>загрузка данних з github</span></div>
+						</li>
+						<li class="list-group-item clearfix">
+							<pre class="col-xs-6">git fetch origin --prune</pre> 
+							<div class="col-xs-6"><span>очистка локально origin гілок( не присутні у віддаленому репозиторії )</span></div>
 						</li>
 						<li class="list-group-item clearfix">
 							<pre class="col-xs-6">git pull</pre> 
